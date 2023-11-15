@@ -55,10 +55,17 @@ function setProgress(e){
 function changeVolume(e){
     let volume = e.offsetX / volumeRange.offsetWidth;
     if(volume < 0.1){
-
+        volume = 0;
     }
 
-    if(volume > ){
+    if(volume > 0.9){
+        volume = 1;
+    }
+    volume.style.width = `${volume * 100}`;
+    video.volume = volume;
+    volumeIcon.className = '';
+
+    if(volume > 0.7){
 
     }
 }
