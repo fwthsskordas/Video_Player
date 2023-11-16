@@ -1,5 +1,5 @@
 :root {
-  --primary-color: rgb(255, 165, 30);
+  --primary-color: rgb(255, 184, 30);
   --font-color: white;
 }
 
@@ -28,7 +28,7 @@ body {
   min-width: 800px;
   border: 5px solid black;
   border-radius: 10px;
-  background: black;
+  background-color: black;
   position: relative;
   cursor: pointer;
 }
@@ -55,18 +55,18 @@ video {
   width: 100%;
   height: 95px;
   margin-top: -95px;
-  background: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   box-sizing: border-box;
   z-index: 5;
   display: flex;
   justify-content: space-between;
   opacity: 0;
-  transition: all 0.5s ease-out 1s;
+  transition: all 0.5s ease-out 2s;
 }
 
 .show-controls:hover .controls-container {
   opacity: 1;
-  transition: all 0.2s ease-in ;
+  transition: all 0.2s ease-out;
 }
 
 .control-group {
@@ -89,14 +89,15 @@ video {
 .progress-range {
   height: 8px;
   width: calc(100% - 30px);
-  background: rgba(114, 114, 114, 0.5);
+  background: rgba(202, 202, 202, 0.5);
   margin: auto;
   border-radius: 10px;
   position: absolute;
   left: 15px;
   top: 15px;
   cursor: pointer;
-  transition: height 0.1 ease-in-out;
+  transition: height 0.1s ease-in-out;
+  z-index: 10;
 }
 
 .progress-range:hover {
@@ -108,7 +109,7 @@ video {
   width: 50%;
   height: 100%;
   border-radius: 10px;
-  transition: all 0.4s ease;
+  transition: all 0.5s ease;
 }
 
 /* Left Controls -------------------------- */
@@ -179,11 +180,8 @@ option {
   cursor: pointer;
 }
 
-select:focus {
-  outline: none;
-}
-
 select {
+  appearance: none;
   background-color: transparent;
   color: var(--font-color);
   border: none;
@@ -193,10 +191,12 @@ select {
   border-radius: 5px;
 }
 
-
+select:focus {
+  outline: none;
+}
 
 select > option {
-  background: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.9);
   border: none;
   font-size: 14px;
 }
@@ -222,8 +222,7 @@ select > option {
 
 /* Media Query: Large Smartphone (Vertical) */
 @media screen and (max-width: 600px) {
-
-  .player{
+  .player {
     min-width: 0;
     max-width: 95vw;
   }
